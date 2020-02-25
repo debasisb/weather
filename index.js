@@ -48,6 +48,6 @@ app.post("/", function(req, res) {
 
 //Commented out these lines in Repl
 //Uncomment these lines when running on laptop
-//app.listen(3000, function() {
-//console.log ("Server is running on port //3000")
-//});
+app.listen(3000, function() {
+console.log ("Server is running on port //3000")
+});
