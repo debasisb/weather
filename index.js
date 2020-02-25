@@ -15,8 +15,8 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
     
     // takes in the zip from the html form, display in // console. Takes in as string, ex. for zip 02139
-        var zip = String(req.body.zipInput);;
-        console.log(req.body.zipInput);
+        var zip = String(req.body.CInput);;
+        console.log(req.body.CInput);
     
     //build up the URL for the JSON query, API Key is // secret and needs to be obtained by signup 
         const units = "imperial";
