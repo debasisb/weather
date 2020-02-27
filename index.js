@@ -15,13 +15,13 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
 
     // takes in the zip from the html form, display in // console. Takes in as string, ex. for zip 02139
-        var zip = String(req.body.zipInput);;
-        console.log(req.body.zipInput);
+        var city = String(req.body.cityInput);;
+        console.log(req.body.cityInput);
 
     //build up the URL for the JSON query, API Key is // secret and needs to be obtained by signup
         const units = "imperial";
         const apiKey = "e2a23207324a3ca9e15f4b78edef5b69";
-        const url = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip +  "&units=" + units + "&APPID=" + apiKey;
+        const url = "https://api.openweathermap.org/data/2.5/weather?city=" + city +  "&units=" + units + "&APPID=" + apiKey;
 
     // this gets the data from Open WeatherPI
     https.get(url, function(response){
