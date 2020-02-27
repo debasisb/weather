@@ -1,7 +1,7 @@
 {
   "name": "weather",
   "version": "1.0.0",
-  "description": "",
+  "description": "Code displays a simple HTML page to obtain the zip code from the user and then uses zip code to obtain weather from Open Weather Map API Note: Requires API Token Key by registration with site below. Free for basic usage https://openweathermap.org/api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +12,13 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kealiiballao/weather.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kealiiballao/weather/issues"
+  },
+  "homepage": "https://github.com/kealiiballao/weather#readme"
 }
