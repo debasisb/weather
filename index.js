@@ -21,7 +21,7 @@ app.post("/", function(req, res) {
     //build up the URL for the JSON query, API Key is // secret and needs to be obtained by signup
         const units = "imperial";
         const apiKey = "e2a23207324a3ca9e15f4b78edef5b69";
-        const url = "https://api.openweathermap.org/data/2.5/weather?city=" + city +  "&units=" + units + "&APPID=" + apiKey;
+        const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city +  "&units=" + units + "&APPID=" + apiKey;
 
     // this gets the data from Open WeatherPI
     https.get(url, function(response){
