@@ -15,7 +15,7 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
 
     // takes in the city from the html form, display in // console. Takes in as string
-        var city = String(req.body.cityInput);;
+        const city = String(req.body.cityInput);
         console.log(req.body.cityInput);
 
     //build up the URL for the JSON query, API Key is // secret and needs to be obtained by signup
@@ -35,14 +35,11 @@ app.post("/", function(req, res) {
             const weatherDescription = weatherData.weather[0].description;
             const icon = weatherData.weather[0].icon;
             const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-
             // displays the output of the results
             res.write("<h1> The weather is " + weatherDescription + "<h1>");
             res.write("<h2>The Temperature in " + city + " is " + temp + " Degrees Fahrenheit<h2>");//took out zip variable because not needed.
             res.write("<img src=" + imageURL +">");
-            res.write("Feels like: "+ feelsLike);
-
-        
+            res.write("Feels like: "+ feelsLike);       
             res.send();
         });
     });
