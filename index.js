@@ -14,9 +14,7 @@ app.get("/", function(req, res) {
 //invoked after hitting go in the html form
 app.post("/", function(req, res) {
     
-    // takes in the zip from the html form, display in // console. Takes in as string, ex. for zip 02139
-        var zip = String(req.body.zipInput);
-        console.log(req.body.zipInput);
+    // takes in the city from the html form, display in // console. Takes in as string
         var city = String(req.body.cityInput);
         console.log(req.body.cityInput)
     
