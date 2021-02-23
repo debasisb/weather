@@ -14,14 +14,14 @@ app.get("/", function(req, res) {
 //invoked after hitting go in the html form
 app.post("/", function(req, res) {
     
-    // takes in the zip from the html form, display in // console. Takes in as string, ex. for zip 02139
-        var zip = String(req.body.zipInput);
-        console.log(req.body.zipInput);
+    // takes in the city from the html form, display in // console. Takes in as string, ex. Hilo for city
+        var city = String(req.body.cityInput);
+        console.log(req.body.cityInput);
     
     //build up the URL for the JSON query, API Key is // secret and needs to be obtained by signup 
         const units = "imperial";
-        const apiKey = "67f6b382921c1e89b39b20d4f9556f22";
-        const url = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip +  "&units=" + units + "&APPID=" + apiKey;
+        const apiKey = "f30e18b4527b683ba7e98e20b3ead03c";
+        const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city +  "&units=" + units + "&APPID=" + apiKey;
     
     // this gets the data from Open WeatherPI
     https.get(url, function(response){
@@ -32,14 +32,19 @@ app.post("/", function(req, res) {
             const weatherData = JSON.parse(data);
             const temp = weatherData.main.temp;
             const city = weatherData.name;
+            const humidity = weatherData.main.humidity;
+            const windSpeed = weatherData.wind.speed;
+            const windDirection = weatherData.wind.deg;
             const weatherDescription = weatherData.weather[0].description;
             const icon = weatherData.weather[0].icon;
             const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
             
             // displays the output of the results
             res.write("<h1> The weather is " + weatherDescription + "<h1>");
-            res.write("<h2>The Temperature in " + city + " " + zip + " is " + temp + " Degrees Fahrenheit<h2>");
-            res.write("<img src=" + imageURL +">");
+            res.write("<h2>The Temperature in " + city + " is " + temp + " Degrees Fahrenheit<h2>");
+            res.write("<img src=" + imageURL +">" + "<br>");
+            res.write("The current humidity is " + humidity + "%" + "<br>");
+            res.write("The current wind conditions are: " + windSpeed + " mph " + "coming from " + windDirection + " degrees");
             res.send();
         });
     });
