@@ -20,7 +20,7 @@ app.post("/", function(req, res) {
     
     //build up the URL for the JSON query, API Key is // secret and needs to be obtained by signup 
         const units = "imperial";
-        const apiKey = "67f6b382921c1e89b39b20d4f9556f22";
+        const apiKey = "0d571fefe8873eb93a636e7913067f59";
         const url = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip +  "&units=" + units + "&APPID=" + apiKey;
     
     // this gets the data from Open WeatherPI
@@ -37,7 +37,7 @@ app.post("/", function(req, res) {
             const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
             
             // displays the output of the results
-            res.write("<h1> The weather is " + weatherDescription + "<h1>");
+            res.write("<h1> The weather is currently " + weatherDescription + "<h1>");
             res.write("<h2>The Temperature in " + city + " " + zip + " is " + temp + " Degrees Fahrenheit<h2>");
             res.write("<img src=" + imageURL +">");
             res.send();
