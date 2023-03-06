@@ -43,7 +43,7 @@ app.post("/", function(req, res) {
             
             // displays the output of the results
             res.write("<h1> The weather consists of " + weatherDescription + "<h1>");
-            res.write("<h2>The Temperature in " + lat + lon + " is " + temp + " Degrees Fahrenheit with " + main + "% Humidity and " + wind + " mph Wind Speed.<h2>");
+            res.write("<h2>The Temperature at " + "Latitude:" + lat + ", " + "Longitude:" + lon + " is " + temp + " Degrees Fahrenheit with " + main + "% Humidity and " + wind + " mph Wind Speed.<h2>");
             res.write("<img src=" + imageURL +">");
             res.send();
         });
